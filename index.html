@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY 1</title>
+    <style>
+        body {
+            margin: 5px;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+
+        .navbar {
+            background: #43392F;
+            padding: 15px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            background-image: url("pic 2.jpg");
+            background-position: center 28%;
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 100%;
+            box-shadow: 0 0 18px #DEAF84;
+            margin: 0px 50px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            padding: 0px;
+            margin: 0px 20px;
+        }
+
+        .menu li {
+            display: inline;
+            margin-left: 0 20px;
+        }
+
+        .menu a {
+            padding: 10px 20px;
+            color: #DEAF84;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            box-shadow: 0 0 30px #DEAF84;
+            border-radius: 15px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            justify-content: space-between;
+        }
+
+        .menu-icon .bar {
+            height: 4px;
+            width: 30px;
+            margin: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #97704F;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 30px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .card1, .card2, .card3 {
+            background-color: #DEAF84;
+            padding: 20px;
+            margin: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            width: 220px;
+            height: 390px;
+            box-shadow: 0 0 10px black;
+        }
+
+        .pic1 {
+            height: 200px;
+            width: 200px;
+            background-repeat: no-repeat;
+            background-image: url("pic 2.jpg");
+            background-position: center 38%;
+            background-size: 240px;
+            border-radius: 10px;
+            align-items: center;
+            border: 0 0 5px black;
+            padding:10px;
+        }
+
+        .pic2 {
+            height: 200px;
+            width: 200px;
+            background-repeat: no-repeat;
+            background-image: url("pic 3.jpg");
+            background-position: -90px 30%;
+            background-size: 330px;
+            border-radius: 10px;
+            padding:10px;
+        }
+
+        .pic3 {
+            height: 200px;
+            width: 200px;
+            background-repeat: no-repeat;
+            background-image: url("Crush.jpg");
+            background-position: center 38%;
+            background-size: 280px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .text p {
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 768px){
+            h1 {
+                font-size: 22px;
+                margin-top: 12px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-top: 5px;
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: repeat(2);
+                grid-gap:20px;
+                justify-content: center;
+            }
+
+            .card1, .card2, .card3 {
+                width: 240px;
+                height: 390px;
+                justify-content: center;
+            }
+
+            .pic1, .pic2, .pic3 {
+                height: 200px;
+                width: 200px;
+                align-items: center;
+                padding:5px;
+                margin: auto;
+            }
+            
+            .card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+            }
+        }
+
+        @media screen and (max-width: 425px){
+            h1 {
+                font-size: 19px;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 17px;
+                margin-top: 10px;
+            }
+
+            .bar {
+                margin: 5px;
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                text-align: center;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 70px;
+                margin:0px;
+                left: 0;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: flex;
+                margin:15px;
+            }
+
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked + .menu-icon + .menu {
+                display: flex;
+                padding: auto;
+            }
+
+            .main {
+                display: flex;
+                padding: 15px;
+                flex-wrap:wrap;
+                /* grid-template-columns: 1; */
+            }
+
+            .card1, .card2, .card3 {
+                width: 265px;
+                height: 390px;
+                justify-content: center;
+                margin:20px;
+            }
+
+            .pic1, .pic2, .pic3 {
+                width: 220px;
+                margin: auto;
+            }
+
+            .pic2 {
+                background-position: -80px 30%;
+            }
+        }
+
+        @media screen and (max-width: 320px){
+            h1 {
+                font-size: 18px;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            .card1, .card2, .card3 {
+                width: 220px;
+                height: 350px;
+                padding:15px;
+                justify-content: center;
+                margin:10px;
+            }
+
+            .pic1, .pic2, .pic3 {
+                width: 180px;
+                height:160px;
+                margin: auto;
+            }
+
+            .pic1 {
+                background-position: center 38%;
+                background-size: 220px;
+            }
+
+            .pic2 {
+                background-position: -70px 50%;
+                background-size: 280px;
+            }
+
+            .pic3 {
+                background-size: 250px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"></div>
+        <input type="checkbox" class="menu-toggle" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="menu">
+            <li><a href="#self">MYSELF</a></li>
+            <li><a href="#hobby">HOBBY</a></li>
+            <li><a href="#crush">CRUSH</a></li>
+        </ul>
+    </nav>
+    <section class="main">
+        <div class="card">
+            <div class="card1" id="self">
+                <div class="pic1"></div>
+                <div class="text">
+                    <h1>SELF</h1>
+                    <p>My name is Catherine A. Talabong. A 19 year old 2nd year college student taking Bachelor of Science and Information Technology at the Dalubhasaan ng Lungsod ng Lucena in Brgy. Isabang, Lucena City.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card2" id="hobby">
+                <div class="pic2"></div>
+                <div class="text">
+                    <h1>PHOTOGRAPHY</h1>
+                    <p>My hobby is taking picture. Finding the right angle for a good point of view of the subject.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card3" id="crush">
+                <div class="pic3"></div>
+                <div class="text">
+                    <h1>CRUSH</h1>
+                    <p>Seriously, I don't have a crush on someone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
