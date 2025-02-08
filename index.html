@@ -20,6 +20,7 @@
         }
 
         .navbar {
+            position:sticky;
             background: #43392F;
             padding: 15px 0px;
             display: flex;
@@ -68,10 +69,11 @@
             box-shadow: 0 0 30px #DEAF84;
             border-radius: 15px;
         }
-        
-        #self, #hobby, #crush {
-            box-shadow: 0 0 30px black;
-        }            
+
+        .menu a:hover ~ section {
+            Opacity: 0.7
+        }
+            
 
         .menu-toggle {
             display: none;
